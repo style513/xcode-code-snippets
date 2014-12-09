@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>zhengyjshared</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (id) init {
+    //禁用 init
+    NSAssert(NO, @"Cannot create instance of Singleton");
+    //这里可以自己决定返回nil 还是 [self initSingleton]
+    return nil;
+}
+
+- (id) initSingleton {
+    self = [super init];
+    if (self) {
+        
+    }
+    return self;
+}
+
++ (&lt;#type#&gt; *) sharedInstance {
+    static &lt;#type#&gt; *instance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&amp;onceToken, ^{
+        instance = [[self alloc] initSingleton];
+    });
+    return instance;
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>99121E83-FEF1-4206-A104-A4687BE5A2EB</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>zhengyj单例</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>
